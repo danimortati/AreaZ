@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Netflix</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Netflix</title>
 </head>
+
 <body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<header>
-   <img src="https://logopng.com.br/logos/netflix-94.png" alt="Logo Netflix">
-   <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-   <nav class="menu">
-      <a href="#">Início</a>
-      <a href="#">Séries</a>
-      <a href="#">Filmes</a>
-      <a href="#">Novidades</a>
-      <a href="#">Minha Lista</a>
-   </nav>
-   <div class="user-profile" onclick="toggleProfileMenu()">
-      <i class="fas fa-user-circle"></i>
-      <div class="profile-dropdown" id="profileDropdown">
-         <a href="#">Configurações</a>
-         <a href="#">Sair</a>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <header>
+      <img src="https://logopng.com.br/logos/netflix-94.png" alt="Logo Netflix">
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <nav class="menu">
+         <a href="#">Início</a>
+         <a href="#">Séries</a>
+         <a href="#">Filmes</a>
+         <a href="#">Novidades</a>
+         <a href="#">Minha Lista</a>
+      </nav>
+      <div class="user-profile" onclick="toggleProfileMenu()">
+         <i class="fas fa-user-circle"></i>
+         <div class="profile-dropdown" id="profileDropdown">
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+         </div>
+      </div>
+   </header>
+
+
+   <section class="showcase">
+      <img
+         src="https://occ-0-160-185.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABWitv9d2DdWwE-V-Dv3cgF-FK5hSpqrsHv4lNs2iBAGnvElPbgZf7qA8WsJspOurveV3Y135QS4YcGyPgWyp1d4bFttV_mlm9d5YHZ74mhY.webp?r=e4f"
+         alt="Logo do Filme" class="movie-logo">
+      <p class="movie-description">A história acompanha o personagem Sheldon Cooper em sua infância e juventude. A série
+         é um spin-off de The Big Bang Theory e apresenta a forma excepcional e um pouco ingênua de Sheldon lidar com o
+         mundo.</p>
+      <div class="showcase-buttons">
+         <button class="btn play-btn"><i class="fas fa-play"></i> Assistir</button>
+         <button class="btn info-btn"><i class="fas fa-info-circle"></i> Mais Informações</button>
+      </div>
+   </section>
+   <section class="category">
+      <h2>Populares na Netflix</h2>
+
+      <div class="movie-list">
+         <div class="arrow left" onclick="scrollMovies('left')"><i class="fas fa-chevron-left"></i></div>
+         <div class="arrow right" onclick="scrollMovies('right')"><i class="fas fa-chevron-right"></i></div>
+      </div>
+   </section>
+   <!-- Repita a seção de categoria conforme necessário -->
+   <div class="modal" id="movieModal">
+      <div class="modal-content">
+         <span class="close-btn" onclick="closeModal()">&times;</span>
+         <video controls width="100%">
+            <source src="path_to_trailer.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+         </video>
+         <p class="movie-description">Sinopse do filme...</p>
+         <button class="watch-btn">Assistir</button>
       </div>
    </div>
-</header>
-
-
-<section class="showcase">
-   <img src="https://occ-0-160-185.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABWitv9d2DdWwE-V-Dv3cgF-FK5hSpqrsHv4lNs2iBAGnvElPbgZf7qA8WsJspOurveV3Y135QS4YcGyPgWyp1d4bFttV_mlm9d5YHZ74mhY.webp?r=e4f" alt="Logo do Filme" class="movie-logo">
-   <p class="movie-description">A história acompanha o personagem Sheldon Cooper em sua infância e juventude. A série é um spin-off de The Big Bang Theory e apresenta a forma excepcional e um pouco ingênua de Sheldon lidar com o mundo.</p>
-   <div class="showcase-buttons">
-      <button class="btn play-btn"><i class="fas fa-play"></i> Assistir</button>
-      <button class="btn info-btn"><i class="fas fa-info-circle"></i> Mais Informações</button>
-   </div>
-</section>
-<section class="category">
-   <h2>Populares na Netflix</h2>
-  
-   <div class="movie-list">
-      <div class="arrow left" onclick="scrollMovies('left')"><i class="fas fa-chevron-left"></i></div>
-   <div class="arrow right" onclick="scrollMovies('right')"><i class="fas fa-chevron-right"></i></div>
-   </div>
-</section>
-<!-- Repita a seção de categoria conforme necessário -->
-<div class="modal" id="movieModal">
-   <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <video controls width="100%">
-         <source src="path_to_trailer.mp4" type="video/mp4">
-         Seu navegador não suporta o elemento de vídeo.
-      </video>
-      <p class="movie-description">Sinopse do filme...</p>
-      <button class="watch-btn">Assistir</button>
-   </div>
-</div>
-<script src="browse.js"></script>
+   <script src="browse.js"></script>
 </body>
+
 </html>
