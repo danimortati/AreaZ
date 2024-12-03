@@ -1,0 +1,311 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #111;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+	padding: 20px 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 999;
+	position: relative;
+	/* O z-index só funciona em elementos posicionados */
+}
+
+header img {
+	width: 100px;
+}
+
+nav {
+	display: flex;
+	gap: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.showcase {
+	background-image: url('https://blogs.correiobraziliense.com.br/proximocapitulo/wp-content/uploads/sites/27/2017/09/Young-Sheldon-1-1280x720.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	text-align: left;
+	position: relative;
+	padding: 20px;
+	align-items: flex-start;
+	/* Alinha à esquerda */
+	padding-left: 50px;
+	/* Adiciona um pouco de espaço à esquerda */
+	background-position: top center;
+	/* Ajusta para mostrar a parte superior da imagem */
+	z-index: auto;
+	/* Restaura o valor padrão */
+}
+
+.showcase::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.movie-logo {
+	width: 320px;
+	z-index: 2;
+}
+
+.movie-description {
+	margin: 20px 0;
+	max-width: 500px;
+	/* Limita a largura da sinopse para melhor leitura */
+	z-index: 2;
+}
+
+.showcase-buttons {
+	display: flex;
+	gap: 20px;
+	z-index: 2;
+}
+
+.btn {
+	padding: 15px 30px;
+	/* Aumenta o padding para tornar os botões maiores */
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	border-radius: 10px;
+	/* Adiciona cantos arredondados */
+}
+
+.play-btn {
+	background-color: #fff;
+	color: #000;
+}
+
+.info-btn {
+	background-color: #555;
+	color: #fff;
+}
+
+.btn i {
+	margin-right: 10px;
+}
+
+.category {
+	position: relative;
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 10;
+	transition: background-color 0.3s;
+}
+
+.arrow:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow.left {
+    position: absolute; /* ou 'fixed' se você quiser que ele fique fixo enquanto rola */
+    top: 60%; /* Posiciona o topo do elemento no meio da janela ou página */
+    left: 10px; /* Como você especificou anteriormente */
+    transform: translateY(-50%); /* Desloca o elemento para cima pela metade de sua própria altura, centralizando-o verticalmente */
+}
+
+
+.arrow.right {
+    position: absolute; /* ou 'fixed' se você quiser que ele fique fixo enquanto rola */
+    top: 60%; /* Posiciona o topo do elemento no meio da janela ou página */
+    right: 10px; /* Como você especificou anteriormente */
+    transform: translateY(-50%); /* Desloca o elemento para cima pela metade de sua própria altura, centralizando-o verticalmente */
+}
+
+.arrow i {
+	color: white;
+	font-size: 1.5rem;
+}
+
+.category h2 {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.movie-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+	display: flex;
+	gap: 20px;
+	overflow-x: scroll;
+	scrollbar-width: none;
+	/* Para Firefox */
+}
+
+.movie-list::-webkit-scrollbar {
+	display: none;
+	/* Para Chrome, Safari e Edge */
+}
+
+.movie-list img {
+	width: 245px;
+	height: 138px;
+	object-fit: cover;
+	transition: transform 0.3s;
+}
+
+.movie-list img:hover {
+	transform: scale(1.1);
+}
+
+.modal {
+	z-index: 999;
+	/* Isso garante que o modal esteja logo abaixo do header */
+	position: fixed;
+	/* Se o modal ainda não estiver posicionado */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* Fundo semi-transparente */
+	display: none;
+	/* Esconde o modal por padrão */
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: #111;
+	padding: 20px;
+	border-radius: 5px;
+	width: 80%;
+	/* Ajuste conforme necessário */
+	max-width: 800px;
+	/* Ajuste conforme necessário */
+}
+
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.movie-description {
+	margin: 20px 0;
+}
+
+.watch-btn {
+	background-color: #e50914;
+	border: none;
+	padding: 10px 20px;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.watch-btn:hover {
+	background-color: #f40612;
+}
+
+.menu-toggle {
+	display: none;
+	/* Esconde por padrão */
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.menu {
+	display: flex;
+	gap: 20px;
+	z-index: 1001;
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+		/* Mostra o ícone de agrupamento */
+	}
+
+	.menu {
+		display: none;
+		/* Esconde o menu */
+		flex-direction: column;
+		/* Empilha os links verticalmente */
+		gap: 10px;
+		position: absolute;
+		top: 60px;
+		/* Ajuste conforme necessário */
+		right: 20px;
+		/* Ajuste conforme necessário */
+		background-color: #111;
+		padding: 10px;
+		border-radius: 5px;
+	}
+
+	.menu.active {
+		display: flex;
+		/* Mostra o menu quando está ativo */
+	}
+}
+  .user-profile i {
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+    margin-left: 20px; /* Espaço à esquerda do ícone */
+    color: #fff; /* Cor do ícone */
+}
+
+.user-profile {
+    position: relative;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.profile-dropdown a:hover {
+    background-color: #555;
+}
