@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8); /* fundo inicialmente transparente */
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* fixo no topo */
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s; /* transição suave para mudança de cor */
+    z-index: 1000; /* para garantir que o cabeçalho fique acima de outros elementos */
+}
+
+.logo img {
+    height: 30px; /* ajuste conforme necessário */
+    width: auto;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* centraliza os itens do menu */
+    align-items: center;
+    flex-grow: 2; /* permite que a lista de navegação ocupe mais espaço */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav a:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+.hero {
+    height: 100vh; /* 100% da altura da viewport */
+    width: 100vw;  /* 100% da largura da viewport */
+    background-image: url('https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=5120&hei=2880&fmt=p-jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero2 {
+    height: 100vh; /* 100% da altura da viewport */
+    width: 100vw;  /* 100% da largura da viewport */
+    background-image: url('https://img.olhardigital.com.br/wp-content/uploads/2023/09/Destaque-iPhone-15-Pro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero2 h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
